@@ -18,8 +18,21 @@ div.nav-links a {
   padding: 0 10px;
 }
 
-div.nav-links a:visited {
-  text-decoration: inherit;
+div.nav-links a:after {
+  content: "";
+  width: 0px;
+  height: 1px;
+  display: block;
+  background: #214d6e;
+  transition: 300ms;
+}
+
+div.nav-links a:hover:after {
+  width: 100%;
+}
+
+div.nav-links a h4 {
+  margin: 0;
 }
 
 div.search-box {

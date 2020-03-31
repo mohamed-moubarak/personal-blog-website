@@ -81,10 +81,6 @@ a.read-more-link:after {
   margin: 5px;
 }
 
-a.read-more-link:visited {
-  text-decoration: inherit;
-}
-
 a.read-more-link:hover {
   background: #fffff8;
   color: #888;

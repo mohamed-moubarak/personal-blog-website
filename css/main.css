@@ -6,6 +6,10 @@ body {
   margin: 0;
 }
 
+a:visited {
+  text-decoration: inherit;
+}
+
 div.main-grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
