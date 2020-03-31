@@ -1,0 +1,19 @@
+footer {
+  grid-area: 5 / 1 / 6 / 5;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #214d6e;
+  border-top: solid 1px #8484841f;
+}
+
+a.social-links {
+  padding-left: 5px;
+  margin-left: 5px;
+  color: #000;
+}
+
+span#heart-icon {
+  color: #e86d6d;
+}
