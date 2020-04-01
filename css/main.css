@@ -6,18 +6,22 @@ body {
   margin: 0;
 }
 
+a {
+  cursor: pointer;
+}
+
 a:visited {
   text-decoration: inherit;
 }
 
-div.main-grid-container {
+.main-grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 2em 25em repeat(2, 31em) 2em;
   grid-gap: 2em;
 }
 
-section#featured-post {
+#featured-post {
   grid-area: 2 / 1 / 3 / 5;
   display: flex;
   justify-content: flex-end;
@@ -30,7 +34,7 @@ section#featured-post {
   background-position: bottom;
 }
 
-h1.featured-post-header {
+.featured-post-header {
   margin: 2em;
   font-size: 45px;
   font-family: "Sen", sans-serif;
@@ -38,7 +42,7 @@ h1.featured-post-header {
   font-weight: 800;
 }
 
-section#main-content {
+#main-content {
   grid-area: 3 / 1 / 5 / 5;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -55,21 +59,21 @@ section#main-content {
     flex-wrap: wrap;
   }
 
-  div.main-grid-container {
+  .main-grid-container {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: 4em 25em repeat(2, 1fr) 2em;
   }
 
-  section#featured-post {
+  #featured-post {
     grid-area: 2 / 1 / 3 / 2;
     max-width: 100vw;
   }
 
-  h1.featured-post-header {
+  .featured-post-header {
     margin: 2em 0 2em 5.5em;
   }
 
-  section#main-content {
+  #main-content {
     grid-area: 3 / 1 / 5 / 2;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -83,17 +87,17 @@ section#main-content {
 }
 
 @media (min-width: 601px) and (max-width: 767px) {
-  div.main-grid-container {
+  .main-grid-container {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: 4em 25em repeat(2, 1fr) 2em;
   }
 
-  section#featured-post {
+  #featured-post {
     grid-area: 2 / 1 / 3 / 2;
     max-width: 100vw;
   }
 
-  section#main-content {
+  #main-content {
     grid-area: 3 / 1 / 5 / 2;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -107,17 +111,17 @@ section#main-content {
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
-  div.main-grid-container {
+  .main-grid-container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 2em 25em repeat(2, 1fr) 2em;
   }
 
-  section#featured-post {
+  #featured-post {
     grid-area: 2 / 1 / 3 / 3;
     max-width: 100vw;
   }
 
-  section#main-content {
+  #main-content {
     grid-area: 3 / 1 / 5 / 3;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(2, 1fr);

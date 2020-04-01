@@ -1,4 +1,4 @@
-nav#header {
+#header {
   grid-area: 1 / 1 / 2 / 5;
   display: flex;
   justify-content: space-between;
@@ -7,19 +7,19 @@ nav#header {
   height: 4em;
 }
 
-div.nav-links {
+.nav-links {
   display: flex;
   justify-content: space-evenly;
   width: 50%;
 }
 
-div.nav-links a {
+.nav-links a {
   text-decoration: inherit;
   color: #214d6e;
   padding: 0 10px;
 }
 
-div.nav-links a:after {
+.nav-links a:after {
   content: "";
   width: 0px;
   height: 1px;
@@ -28,19 +28,19 @@ div.nav-links a:after {
   transition: 300ms;
 }
 
-div.nav-links a:hover:after {
+.nav-links a:hover:after {
   width: 100%;
 }
 
-div.nav-links a h4 {
+.nav-links a h4 {
   margin: 0;
 }
 
-div.search-box {
+.search-box {
   border-bottom: solid grey 1px;
 }
 
-input.search-input {
+.search-input {
   outline: 0;
   border: 0px;
   width: 15em;
@@ -48,12 +48,12 @@ input.search-input {
 }
 
 @media (max-width: 600px) {
-  nav#header {
+  #header {
     grid-area: 1 / 1 / 2 / 2;
     flex-wrap: wrap;
   }
 
-  nav#header div {
+  #header div {
     margin: 1.5%;
     width: 100%;
     max-width: 90vw;
@@ -61,24 +61,24 @@ input.search-input {
     justify-content: space-between;
   }
 
-  div.search-box {
+  .search-box {
     margin-top: 1em !important;
   }
 
-  input.search-input {
+  .search-input {
     max-width: 80%;
   }
 }
 
 @media (min-width: 601px) and (max-width: 767px) {
-  nav#header {
+  #header {
     grid-area: 1 / 1 / 2 / 2;
     flex-wrap: wrap;
   }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
-  nav#header {
+  #header {
     grid-area: 1 / 1 / 2 / 3;
     flex-wrap: wrap;
   }
