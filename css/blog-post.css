@@ -3,14 +3,14 @@
 
 body {
   margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .main-post-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 2em 20em 70vh 1fr 3em;
+  grid-template-rows: 2em 20em repeat(2, 1fr) 3em;
   grid-gap: 2em;
-  max-height: 100vh;
 }
 
 #post-header {
@@ -30,21 +30,25 @@ body {
   grid-area: 3 / 1 / 5 / 5;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr;
-  grid-template-areas: "author-social author-social article article article";
-  grid-gap: 1em;
-  margin: 0 1em;
+  grid-template-rows: 1fr 5fr;
+  grid-template-areas:
+    "author author author author author"
+    "article article article article article ";
 }
 
-#author-social-sharing {
-  grid-area: author-social;
-  max-height: 70vh;
+#author {
+  grid-area: author;
 }
 
 #blog-post {
   grid-area: article;
   overflow-y: scroll;
-  margin: 0 1em;
+  margin: 0 5em;
+  -webkit-box-shadow: 0px 0px 39px -27px rgba(204, 204, 204, 1);
+  -moz-box-shadow: 0px 0px 39px -27px rgba(204, 204, 204, 1);
+  box-shadow: 0px 0px 39px -27px rgba(204, 204, 204, 1);
+  border-radius: 5px;
+  padding: 2em;
 }
 
 #blog-post p {
@@ -53,9 +57,13 @@ body {
 }
 
 .author {
+  -webkit-box-shadow: 0px 0px 39px -27px rgba(204, 204, 204, 1);
+  -moz-box-shadow: 0px 0px 39px -27px rgba(204, 204, 204, 1);
+  box-shadow: 0px 0px 39px -27px rgba(204, 204, 204, 1);
   display: flex;
   flex-direction: column;
-  padding: 0 1em;
+  margin: 1em 5em 0 5em;
+  padding: 1em 5em;
 }
 
 #author-img {
@@ -67,7 +75,6 @@ body {
 #author-info {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
 #author-name-title {
@@ -84,7 +91,7 @@ body {
   font-size: 2em;
 }
 
-#author-title {
+.author-company-title {
   font-size: 1.2em;
 }
 
@@ -93,22 +100,35 @@ body {
 }
 
 blockquote {
-  font-size: 1.5em;
   text-align: justify;
+  padding: 1em;
+  background: #fdfdfc;
+  border-radius: 5px;
+  font-family: "Roboto Slab", serif;
+  font-size: 1.5em;
+  font-weight: 400;
 }
 
 blockquote::before {
-  content: open-quote;
-  font-size: 1.5em;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f10d";
+  font-size: 1em;
   padding-right: 0.5em;
   font-weight: 700;
 }
 
 blockquote::after {
-  content: close-quote;
-  font-size: 1.5em;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f10e";
+  font-size: 1em;
   padding-left: 0.5em;
   font-weight: 700;
+}
+figure {
+  margin: 24px 40px;
+  padding: 1.4em;
 }
 
 figure img {
@@ -118,4 +138,26 @@ figure img {
 figure figcaption {
   text-align: end;
   margin: 0 1em;
+}
+
+#social-sharing {
+  display: flex;
+  align-items: center;
+}
+
+.social-sharing-link {
+  font-size: 2.5em;
+  margin: 0px 0.4em;
+}
+
+#twitter {
+  color: #1da1f2;
+}
+
+#facebook {
+  color: #4267b2;
+}
+
+#linkedin {
+  color: #0077b5;
 }

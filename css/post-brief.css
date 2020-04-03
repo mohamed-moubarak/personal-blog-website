@@ -76,7 +76,9 @@
 }
 
 .read-more-link:after {
-  content: ">";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f105";
   font-weight: 900;
   font-size: larger;
   margin: 5px;
