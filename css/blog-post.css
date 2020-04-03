@@ -16,7 +16,7 @@ body {
 #post-header {
   grid-area: 2 / 1 / 3 / 5;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-end;
   width: 100%;
   height: 100%;
@@ -26,23 +26,28 @@ body {
   background-position: bottom;
 }
 
+.blog-post-title {
+  color: #fffff8;
+  font-size: 3.5em;
+  text-transform: capitalize;
+}
+
 #main-post-content {
   grid-area: 3 / 1 / 5 / 5;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr 5fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr minmax(200px, max-content);
   grid-template-areas:
-    "author author author author author"
-    "article article article article article ";
+    "author"
+    "article";
 }
 
-#author {
+#author-container {
   grid-area: author;
 }
 
 #blog-post {
   grid-area: article;
-  overflow-y: scroll;
   margin: 0 5em;
   -webkit-box-shadow: 0px 0px 39px -27px rgba(204, 204, 204, 1);
   -moz-box-shadow: 0px 0px 39px -27px rgba(204, 204, 204, 1);
@@ -115,7 +120,6 @@ blockquote::before {
   content: "\f10d";
   font-size: 1em;
   padding-right: 0.5em;
-  font-weight: 700;
 }
 
 blockquote::after {
@@ -124,8 +128,8 @@ blockquote::after {
   content: "\f10e";
   font-size: 1em;
   padding-left: 0.5em;
-  font-weight: 700;
 }
+
 figure {
   margin: 24px 40px;
   padding: 1.4em;
@@ -160,4 +164,305 @@ figure figcaption {
 
 #linkedin {
   color: #0077b5;
+}
+
+@media (max-width: 600px) {
+  * {
+    flex-wrap: wrap;
+  }
+
+  .main-post-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 4em 20em repeat(2, 1fr) 2em;
+    grid-gap: 1em;
+  }
+
+  #post-header {
+    grid-area: 2 / 1 / 3 / 2;
+    max-width: 100vw;
+  }
+
+  .blog-post-title {
+    font-size: 2em;
+    margin: 0.5em;
+    text-align: center;
+  }
+
+  #main-post-content {
+    grid-area: 3 / 1 / 5 / 2;
+  }
+
+  #author-container {
+    max-width: 100vw;
+  }
+
+  .author {
+    margin: 2%;
+    padding: 1em;
+  }
+
+  #author-info {
+    justify-content: center;
+  }
+
+  #author-biography p {
+    text-align: justify;
+    font-size: 0.9em;
+  }
+
+  #author-img {
+    width: 5em;
+    height: 5em;
+  }
+
+  #author-name {
+    font-size: 1.5em;
+  }
+
+  #author-name-title {
+    align-items: center;
+  }
+
+  #blog-post {
+    font-size: 1em;
+    max-width: 92vw;
+    margin: 0 2%;
+    padding: 2%;
+  }
+
+  #blog-post p {
+    font-size: 1em;
+  }
+
+  blockquote {
+    font-size: 0.9em;
+    font-weight: 300;
+    padding: 2%;
+    margin: 4%;
+  }
+
+  blockquote::before {
+    font-size: 0.5em;
+    padding-right: 0.2em;
+  }
+
+  blockquote::after {
+    font-size: 0.5em;
+    padding-left: 0.2em;
+  }
+
+  figure {
+    padding: 2%;
+    margin: 4%;
+  }
+
+  figure figcaption {
+    text-align: end;
+    font-size: 0.9em;
+    margin: 0 2%;
+  }
+
+  #social-sharing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #social-sharing h3 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .social-sharing-link {
+    font-size: 1.5em;
+    margin: 0px 0.4em;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+  .main-post-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 4em 25em repeat(2, 1fr) 2em;
+    grid-gap: 1em;
+  }
+
+  #post-header {
+    grid-area: 2 / 1 / 3 / 2;
+    max-width: 100vw;
+  }
+
+  .blog-post-title {
+    font-size: 3em;
+    margin: 0.5em;
+    text-align: center;
+  }
+
+  #main-post-content {
+    grid-area: 3 / 1 / 5 / 2;
+  }
+
+  #author-container {
+    max-width: 100vw;
+  }
+
+  .author {
+    margin: 2%;
+    padding: 1em 1.5em;
+  }
+
+  #author-info {
+    justify-content: center;
+  }
+
+  #author-biography p {
+    text-align: justify;
+    font-size: 1em;
+  }
+
+  #author-img {
+    width: 5em;
+    height: 5em;
+  }
+
+  #author-name {
+    font-size: 1.5em;
+  }
+
+  #author-name-title {
+    align-items: center;
+  }
+
+  #blog-post {
+    font-size: 1.1em;
+    max-width: 92vw;
+    margin: 0 2%;
+    padding: 2%;
+  }
+
+  #blog-post p {
+    font-size: 1.1em;
+  }
+
+  blockquote {
+    font-size: 1em;
+    font-weight: 300;
+    padding: 2%;
+    margin: 4%;
+  }
+
+  blockquote::before {
+    font-size: 0.7em;
+    padding-right: 0.2em;
+  }
+
+  blockquote::after {
+    font-size: 0.7em;
+    padding-left: 0.2em;
+  }
+
+  figure {
+    padding: 2%;
+    margin: 4%;
+  }
+
+  figure figcaption {
+    text-align: end;
+    font-size: 1em;
+    margin: 0 2%;
+  }
+
+  #social-sharing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-sharing-link {
+    font-size: 2em;
+    margin: 0px 0.4em;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .main-post-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 2em 25em repeat(2, 1fr) 2em;
+  }
+
+  #post-header {
+    grid-area: 2 / 1 / 3 / 3;
+    max-width: 100vw;
+  }
+
+  .blog-post-title {
+    font-size: 3.5em;
+    margin: 0.5em;
+    text-align: center;
+  }
+
+  #main-post-content {
+    grid-area: 3 / 1 / 5 / 3;
+  }
+
+  #author-container {
+    max-width: 100vw;
+  }
+
+  .author {
+    margin: 4%;
+    padding: 1.4em 1.7em;
+  }
+
+  #author-biography p {
+    text-align: justify;
+    font-size: 1.1em;
+  }
+
+  #author-name {
+    font-size: 1.7em;
+  }
+
+  #blog-post {
+    font-size: 1.1em;
+    max-width: 84vw;
+    margin: 0 4%;
+    padding: 4%;
+  }
+
+  #blog-post p {
+    font-size: 1.1em;
+  }
+
+  blockquote {
+    font-size: 1.1em;
+    font-weight: 300;
+    padding: 2%;
+    margin: 4%;
+  }
+
+  blockquote::before {
+    font-size: 0.9em;
+    padding-right: 0.4em;
+  }
+
+  blockquote::after {
+    font-size: 0.9em;
+    padding-left: 0.4em;
+  }
+
+  figure {
+    padding: 2%;
+    margin: 4%;
+  }
+
+  figure figcaption {
+    text-align: end;
+    font-size: 1em;
+    margin: 0 2%;
+  }
+
+  .social-sharing-link {
+    font-size: 2.2em;
+    margin: 0px 0.4em;
+  }
 }
